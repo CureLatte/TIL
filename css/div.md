@@ -15,6 +15,29 @@
 
 ***
 
+### 속성
+
+<br>
+
+* ```background-color``` - ```색깔```: div의 배경색을 설정
+* ```background-img``` - ```url("이미지 경로")```: div의 배경을 img로 설정
+* ```background-position``` 
+  * default  ```center```
+  * ```center``` ```left``` ```right```
+  * ```top``` ```center``` ```bottom``` 조합
+* ```background-repeat``` : 배경이미지 반복 설정
+  * default ```repeat```
+  * ```repeat-x``` : x축 방향(가로축) 으로 반복
+  * ```repeat-y``` : y축 방향(세로축) 으로 반복
+  * ```no-repeat``` : 반복 설정 x
+* ```overflow``` : 안의 내용물이 div 보다 클 경우
+  * default  ```auto``` : 넘치는 방향으로 스크롤 생성
+  * ```scroll``` : 스크롤 넣기
+  * ```hidden``` : 보이지 않게 하기
+    * ```.classname::-webkit-scrollbal``` : 스크롤관련 css
+
+***
+
 ### 주의 사항
 
 <br>
