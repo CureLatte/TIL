@@ -18,7 +18,7 @@
 
 [블로그 링크](https://jscript.tistory.com/)  
 
-[오늘](#1월-5일)
+[오늘](#1월-6일)
 
 * [2021년](#12월-23일)
 
@@ -201,4 +201,23 @@
 > Git에 대한 강의를 미리 들었다면 협업을 더 잘 했을 것 같다.
 > 이번 기회에 제대로 알 수있어서 다음 프로젝트를 작업할 때는 더 쉽게 협업을 할 수 있을 것 같다. 
 
+***
 
+<br>
+
+
+##### 1월 6일
+
+
+* 머신러닝 수강 2주차 완
+* [Linear_Regression](Machine_Learning/Linear_Regression)
+* [Logistic Regression](Machine_Learning/Logistic_regression)
+* [SVM](Machine_Learning/SVM.md)
+* [PreProcessing](Machine_Learning/Preprocessing)
+* 
+
+간단 소감
+> 머신 러닝에 대해 2추자 수강을 완료했다. 머신러닝이라는게 생각보다 어려울 줄 알았는데 
+> 이미 라이브러리가 있고 해당 라이브러리에 대입을 해서 사용하기 때문에 
+> 새로운  python Library를 쓰는 듯한 느낌이다. 문법이나 다른 라이브러리에 대해 
+> 암기가 필요할 것 같으나 이미 짜여진 코드를 사용 하기에는 무리가 없다고 생각 한다. 
