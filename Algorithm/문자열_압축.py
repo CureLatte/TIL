@@ -60,45 +60,49 @@
 #############################################
 
 testcase = [
-    ["aabbaccc",7],
-    ["ababcdcdababcdcd",9],
-    ["abcabcdede",8],
-    ["abcabcabcabcdededededede",14],
-    ["xababcdcdababcdcd",17],
+    ["aabbaccc", 7],
+    ["ababcdcdababcdcd", 9],
+    ["abcabcdede", 8],
+    ["abcabcabcabcdededededede", 14],
+    ["xababcdcdababcdcd", 17],
     ["a", 1]
 ]
+
+
 #python 풀이
 
-
 def solution(s):
-    answer = 0
-    temp = ''
-    test = [len(s)]
-    for i in range(1, len(s) // 2 + 1):
+    # n번씩 자르는 경우
+    # n번식 잘랐을 때 변환
+
+    length_temp = [len(s)]
+
+    for i in range(1, len(s)//2+1):
         target = s[0:i]
         cnt = 0
-        for k in range(0, len(s)+i, i):
-            if target == s[k:k + i]:
-                cnt += 1
-            else:
-                if cnt == 1:
-                    temp += str(target)
-                else:
-                    temp += str(cnt) + str(target)
-                target = s[k:k + i]
-                cnt = 1
-        test.append(len(temp))
         temp = ''
+        for k in range(0, len(s)+i, i):
+            if target != s[k:k+i]:
+                if cnt == 1:
+                    cnt = ''
+                temp += str(cnt) + target
+                target = s[k:k+i]
+                cnt = 1
+            else:
+                cnt += 1
 
-    answer = min(test)
+        length_temp.append(len(temp))
+    answer = min(length_temp)
     return answer
 
 
 
 ## test 확인!
+
+# print(solution(testcase[1][0]))
+
 print('======== result =========')
 for test in testcase:
-
     answer = solution(test[0])
     if answer == test[1]:
         print(True)
