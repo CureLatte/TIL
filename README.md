@@ -516,20 +516,22 @@ __간단 소감__
   > 추가로 `jypipe` 도 같이 깔아줘야 한다. 
   
   > * 에러 메세지
-  >  ![img.png](images/3월 29일/img.png)
+  >  ![img.png](images/3월_29일/img.png)
   > 
   >  해당 에러는 `HTML`에서 `<link>` 태그, `<script>` 태그 에서 지정한 파일들의  
   >  경로를 찾지 못할때 발생하는 에러이다.   
   > *  상황  
   > `Django` 에서 `AWS S3`를 통해 `static` 폴더를 전부 옮겨 놓은 후 연결까지 확인을 했지만
   >  실제 작업을 할 때는 바로 바로 적용이 되질 않는다고 하여 파일 등록한 부분만 주석처리하면 정상작동이 되는 줄 알았음
-     ![img_2.png](images/3월 29일/img_2.png)
+     ![img_2.png](images/3월_29일/img_2.png)
   > 
   > * 해결  
   > `setting.py`  에서 `DEBUG = False` 부분을 `DEBUG = True` 로 변경해 주었더니 정상 작동 했다.  
-  >  이유는 `urls.py` 에서 빨간색 박스 친부분 때문으로 추측이 되는데  `DEBUG` 가 `False` 인 상황에서 작동 하는 코드 이기 때문이다.    
+  >  이유는 `urls.py` 에서 빨간색 박스 친부분 때문으로 추측이 되는데  `DEBUG` 가 `False` 인 상황에서 작동 하는 코드 이기 때문이다.      
+  >   
+  >  
+  > ![img_4.png](images/3월_29일/img_4.png)
   > 
-  >  ![img_4.png](images/3월 29일/img_4.png)  
   
   >따라서 `DEBUG=True` 로 헀더니 정상 작동했다.
 
