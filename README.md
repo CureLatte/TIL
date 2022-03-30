@@ -578,16 +578,16 @@ __간단 소감__
     
 * Error
   * Elastic Beanstalk 배포  
-  * Komoran() 형태소 분석기 배포시 설정 해야할 것들
-    * JDK 1.8 버전 이상 설치
+  * `Komoran()` 형태소 분석기 배포시 설정 해야할 것들
+    * `JDK 1.8` 버전 이상 설치
       * `sudo apt-get install openjdk-8-jdk python-dev python3-dev`
       * `java -version`으로 깔렸는지 확인 하기!
       * 깔리지 않았다면 환경변수를 설정하자. `JAVA_HOME`
-    * Jpype 설치
+    * `Jpype` 설치
       * `sudo pip3 install jpype1-py3`
       
-  * 영어 형태소 분석기 배포시 설정해야할 것들
-    * nltk 설치 (버전 꼭 입력하기)
+  * 영어 형태소 분석기 배포시 설정 해야할 것들
+    * `nltk` 설치 (버전 꼭 입력 하기)
     * `sudo pip install -U nltk==3.5`
     * `sudo python -m nltk.downloader all`
     * `import nltk` 관련 오류가 있다면 해당 `python` 에서 `nltk`를 import 해서 나오는 명령어 치면됨
