@@ -571,6 +571,11 @@ __간단 소감__
 
 <br>    
 
+* Info
+  * `AJAX` - `async` : ` default` 는 `True` 여서 요청 보낸 이후 결과가 올 떄까지 기다리지 않고 바로 다음 코드를 실행 한다.   
+    이를 기다릴려면 `False`로 바꿔야 함
+
+    
 * Error
   * Elastic Beanstalk 배포  
   * Komoran() 형태소 분석기 배포시 설정 해야할 것들
