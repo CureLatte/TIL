@@ -18,7 +18,7 @@
 
 [블로그 링크](https://jscript.tistory.com/)  
 
-[오늘](#3월-29일)
+[오늘](#3월-30일)
 
 * [2021년](#12월-23일)
 
@@ -552,4 +552,55 @@ __간단 소감__
 >  
 
 ***
+<br>
+<br>
+
+
+### 3월 30일
+
+***
+
+* Project - ALALTalk 
+  * 추천 시스템 ON/OFF 토글 만들기 
+  * 채팅 로그 만드는 함수 만들기 
+  * 찜기능 중복 이벤트 처리 
+  * KeyWordAPI EC2 배포 
+  * DB 수정 - youtube, book 
+  * search_router 추가 - 검색 기능 분리 
+  * recommend.js Refactoring
+
+<br>    
+
+* Error
+  * Elastic Beanstalk 배포  
+  * Komoran() 형태소 분석기 배포시 설정 해야할 것들
+    * JDK 1.8 버전 이상 설치
+      * `sudo apt-get install openjdk-8-jdk python-dev python3-dev`
+      * `java -version`으로 깔렸는지 확인 하기!
+      * 깔리지 않았다면 환경변수를 설정하자. `JAVA_HOME`
+    * Jpype 설치
+      * `sudo pip3 install jpype1-py3`
+      
+  * 영어 형태소 분석기 배포시 설정해야할 것들
+    * nltk 설치 (버전 꼭 입력하기)
+    * `sudo pip install -U nltk==3.5`
+    * `sudo python -m nltk.downloader all`
+    * `import nltk` 관련 오류가 있다면 해당 `python` 에서 `nltk`를 import 해서 나오는 명령어 치면됨
+  * MySQL RDS 접속
+    * `Pycham` 에서는 쿼리문으로 시간을 바꿨지만 터미널 에서 접속하는 방법을 모름
+    
+  * AWS S3 연결
+  
+
+__간단 소감__
+>  키워드 API 서버를 배포하는데 `Elasticbeanstalk` 을 이용해서 배포를 하려다가 실패했다.   
+> 거의 다 배포한 것같았는데 마지막까지  `JVM` 라이브리리를 못 찾는다고 했다. java, 환경변수 까지  
+> 설정을 해주었지만 `Jpype`를 깔지 못해서 그런 것같다. `Jpype`는 `Linux` 버전이 없어서 깔지 못했는데
+> `ubuntu` 가 `Linux` 기반이라고 해서 될줄 알았다가 되질 않았다. 시간이 너무 지체되서 이전 방법으로
+> 서버를 만들었다. 덕분에 할일이 많이 밀어졌지만 끝까지 하고 가서 맘 편히 가는 것같다.   
+> 특히 오늘 리팩토링이 너무 뿌듯하다.
+> 피곤한 관계로 사진 첨부 및 오류는 확보하지 못해 기억나는대로 적음
+
+***
+<br>
 <br>
