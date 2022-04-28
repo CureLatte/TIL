@@ -16,9 +16,11 @@
 
 <br>
 
-### [블로그 링크](https://jscript.tistory.com/)  
+#### [블로그 링크](https://jscript.tistory.com/)  
 
-### [오늘](/2022/04/28/2022_04_28.md)
+#### [Notion 기술 정리](https://quartz-laborer-e78.notion.site/ac1c4c79116b4785b16233eb990cfc28)
+
+### [오늘](/2022/04/27/2022_04_27.md)
 
 * ## [2021년](/2021)
 
