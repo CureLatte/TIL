@@ -18,7 +18,9 @@
 
 #### [블로그 링크](https://jscript.tistory.com/)  
 
-#### [Notion 기술 정리](https://quartz-laborer-e78.notion.site/ac1c4c79116b4785b16233eb990cfc28)
+#### [Notion CS 정리](https://quartz-laborer-e78.notion.site/ac1c4c79116b4785b16233eb990cfc28)
+
+#### [백준/ 프로그래머스 통과 문제](https://github.com/CureLatte/Bae_joonHub.git)
 
 ### [오늘](/2022/05/02/2022_05_02.md)
 
@@ -32,4 +34,5 @@
   * ### [2월](/2022/02)
   * ### [3월](/2022/03)
   * ### [4월](/2022/04)
+  * ### [5월](/2022/05)
   
