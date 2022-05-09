@@ -3,9 +3,8 @@
 
 from abc import abstractmethod
 
+
 # Observer 패턴은 interface만 사용한다!!!!
-
-
 # Observer 인테페이스 구현
 class Observer:
     # Observer 인터페이스는 update 메소드만!
