@@ -32,7 +32,7 @@ def bfs(start_node, graph):
 
 
 def main():
-    # sys.stdin = open('input.txt', 'r')
+    # sys.stdin = open('input.txt.txt', 'r')
 
     n, connect, start_node = map(int, input().split())
 
