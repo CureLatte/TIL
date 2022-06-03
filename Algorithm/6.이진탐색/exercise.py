@@ -5,39 +5,28 @@ import sys
 from collections import deque
 
 
-def search(nums, st, en, target):
-    # 함수 종료 조건
-    if st == en:
-        # 맞 았을때
-        if nums[st] == target:
-            print(1)
-        # 맞지 않았을 때
-        else:
-            print(0)
-        return
-    mid = (st + en) // 2
-    if nums[mid] < target:
-        search(nums, mid + 1, en, target)
-    else:
-        search(nums, st, mid, target)
+def solution(num_list, start, end):
+    target = num_list[start: end+1]
+    if len(target) % 2 == 0:
+        return print(0)
 
-
-def solution(standard, check_list):
-    ordered = sorted(standard)
-    for check in check_list:
-        search(ordered, 0, len(ordered)-1, check)
+    mid = len(target)//2
+    for idx in range(mid):
+        if target[idx] != target[-idx]:
+            return print(0)
+    return print(1)
 
 
 def main():
     # sys.stdin = open('input.txt', 'r')
 
     n = int(input())
-    standard = list(map(int, input().split()))
+    num_list = list(map(int, input().split()))
 
     m = int(sys.stdin.readline())
-    check_list = list(map(int, input().split()))
-
-    solution(standard, check_list)
+    for _ in range(m):
+        start, end = list(map(int, input().split()))
+        solution(num_list, start-1, end-1)
 
 
 if __name__ == '__main__':

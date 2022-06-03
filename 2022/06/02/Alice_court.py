@@ -15,6 +15,7 @@ class Judge:
     def end_judgment(self):
         print('\n', self.role.name, '가 판사 자리를 물러났다.\n')
         print('법정 끝!')
+        self.role = None
 
 
 class Guard:
@@ -26,6 +27,8 @@ class Guard:
         w = Witness()
         w.role = witness
         return w
+
+# 공용 인터페이스 구현 -> 객체가 자율적으로 행동할수 있따. , 구분을 잘 해야한다.
 
 
 class Witness:
@@ -69,7 +72,7 @@ class Alice:
 class Chef:
     def __init__(self):
         self.name = '요리사'
-        self.saw = '저는 요리만 했습니다!'
+        self.saw = '도망쳐..!'
 
 
 class Rabbit:
@@ -78,12 +81,19 @@ class Rabbit:
         self.saw = '나는 못봄'
 
 
+class JS:
+    def __init__(self):
+        self.name = 'js'
+        self.saw = '저는 똑똑이 입니당'
+
+
 def main():
     heart_king = King()
     alice = Alice()
     rabbit = Rabbit()
     queen = Queen()
     chef = Chef()
+    js = JS()
 
     judge, guard = heart_king.start_judgment()
     guard.role = rabbit
@@ -100,6 +110,9 @@ def main():
     q_guard.role = rabbit
 
     q_judge.call_witness(q_guard, chef)
+    q_judge.testify()
+
+    q_judge.call_witness(q_guard, js)
     q_judge.testify()
 
     judge.end_judgment()
