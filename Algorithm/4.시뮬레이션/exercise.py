@@ -25,18 +25,18 @@ def dfs(v, d):
     global cnt
     row, col = v
     if graph[row][col] == 1:
-        return False
+        return
+
     if graph[row][col] == 0:
         cnt += 1
         graph[row][col] = 2
+        a = 0
         for _ in range(4):
             d = (d + 1) % 4
             new_row = row + d_row[d]
             new_col = col + d_col[d]
             if 0 <= new_row <= N-1 and 0 <= new_col <= M-1:
                 dfs((new_row, new_col), d)
-
-    return True
 
 
 dfs((nr, nc), s_d)
