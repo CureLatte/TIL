@@ -1,27 +1,56 @@
-
-
-
 # 그리디 : 최소 값을 쫒다보면 답이 나온다!
 
 import sys
 from collections import deque
 
 
-def main():
-    # sys.stdin = open('input.txt', 'r')
+input = sys.stdin.readline
 
-    n = int(input())
+N = int(input())
 
-    delivery_cnt = []
-    for a in range(n // 5 + 1):
-        rest = (n - a * 5)
-        if rest % 3 == 0:
-            delivery_cnt.append(a + rest//3)
-    if len(delivery_cnt) == 0:
-        print(-1)
-    else:
-        print(min(delivery_cnt))
+array = []
+
+negative_array = []
+
+last_array=[]
+
+for a in range(N):
+    value = int(input())
+    if value >0:
+        array.append(value)
+    else :
+        negative_array.append(value)
+
+array.sort(reverse=True)
+negative_array.sort()
 
 
-if __name__ == '__main__':
-    main()
+def sum_array(arrays):
+    global last_array
+
+    if len(arrays) == 0:
+        return []
+    new_array = []
+    last = 0
+    for idx in range(len(arrays) - 1):
+        if arrays[idx] == '#':
+            continue
+        comp = arrays[idx] * arrays[idx + 1]
+        temp_sum = arrays[idx] + arrays[idx + 1]
+
+        if comp > temp_sum:
+            new_array.append(comp)
+            arrays[idx + 1] = '#'
+        else:
+            new_array.append(arrays[idx])
+
+    if arrays[-1] != '#':
+        last_array.append(arrays[-1])
+    return new_array
+
+
+a = sum_array(array)
+b = sum_array(negative_array)
+
+
+print(sum(a) + sum(b))
