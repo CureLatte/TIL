@@ -2,32 +2,11 @@
 # 외우기 코드!
 
 import sys
-from collections import deque
 
+input = sys.stdin.readline
 
-def solution(num_list, start, end):
-    target = num_list[start: end+1]
-    if len(target) % 2 == 0:
-        return print(0)
+N, M = map(int, input().split())
 
-    mid = len(target)//2
-    for idx in range(mid):
-        if target[idx] != target[-idx]:
-            return print(0)
-    return print(1)
+tree = list(map(int, input().split()))
 
-
-def main():
-    # sys.stdin = open('input.txt', 'r')
-
-    n = int(input())
-    num_list = list(map(int, input().split()))
-
-    m = int(sys.stdin.readline())
-    for _ in range(m):
-        start, end = list(map(int, input().split()))
-        solution(num_list, start-1, end-1)
-
-
-if __name__ == '__main__':
-    main()
+print(tree)
