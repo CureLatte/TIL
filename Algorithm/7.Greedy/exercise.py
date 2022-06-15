@@ -3,54 +3,21 @@
 import sys
 from collections import deque
 
-
 input = sys.stdin.readline
 
 N = int(input())
 
-array = []
+money_list = list(map(int, input().split()))
+#
+# print(money_list)
 
-negative_array = []
+sorted_money_list = sorted(money_list)
 
-last_array=[]
+# print(sorted_money_list)
+#
+answer = 0
 
-for a in range(N):
-    value = int(input())
-    if value >0:
-        array.append(value)
-    else :
-        negative_array.append(value)
+for idx in range(len(sorted_money_list)):
+    answer += sum(sorted_money_list[:idx+1])
 
-array.sort(reverse=True)
-negative_array.sort()
-
-
-def sum_array(arrays):
-    global last_array
-
-    if len(arrays) == 0:
-        return []
-    new_array = []
-    last = 0
-    for idx in range(len(arrays) - 1):
-        if arrays[idx] == '#':
-            continue
-        comp = arrays[idx] * arrays[idx + 1]
-        temp_sum = arrays[idx] + arrays[idx + 1]
-
-        if comp > temp_sum:
-            new_array.append(comp)
-            arrays[idx + 1] = '#'
-        else:
-            new_array.append(arrays[idx])
-
-    if arrays[-1] != '#':
-        last_array.append(arrays[-1])
-    return new_array
-
-
-a = sum_array(array)
-b = sum_array(negative_array)
-
-
-print(sum(a) + sum(b))
+print(answer)
