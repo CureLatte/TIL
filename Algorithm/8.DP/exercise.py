@@ -5,24 +5,36 @@ import sys
 from collections import deque
 
 
-def main():
-    # sys.stdin = open('input.txt', 'r')
+input = sys.stdin.readline
 
+N = int(input())
+
+
+INF = sys.maxsize
+all_case = [[INF, INF]] * 41
+all_case[0] = [1, 0]
+all_case[1] = [0, 1]
+
+
+def pibo(N):
+    global all_case
+
+    for a in range(2, N+1):
+        prev_1 = all_case[a-1]
+        prev_2 = all_case[a-2]
+
+        all_case[a] = [prev_1[0] + prev_2[0], prev_1[1] + prev_2[1]]
+
+
+check = []
+for _ in range(N):
     n = int(input())
+    check.append(n)
 
-    case = [0] * (10**6 + 1)
-    case[1] = 0
-    case[2] = 1
-    case[3] = 1
-    for a in range(4, n + 1):
-        temp = [case[a-1]]
-        if a % 2 == 0:
-            temp.append(case[a//2])
-        if a % 3 == 0:
-            temp.append(case[a//3])
-        case[a] = min(temp) + 1
-    print(case[n])
+pibo(max(check))
+
+for value in check:
+    print(all_case[value][0], all_case[value][1])
 
 
-if __name__ == '__main__':
-    main()
+
