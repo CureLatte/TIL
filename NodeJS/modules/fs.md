@@ -4,10 +4,10 @@
 
 ```javascript
 // 기본적인 fs 사용법 - 콜백 함수임
-const fs = require('fs')
+const fs = require('NodeJS/modules/fs')
 
-fs.readFile('./readme.txt', (err, data)=>{
-    if(err){
+fs.readFile('./readme.txt', (err, data) => {
+    if (err) {
         throw err
     }
     console.log(data)
@@ -15,30 +15,30 @@ fs.readFile('./readme.txt', (err, data)=>{
 })
 
 // promise로 사용가능
-const fs = require('fs').promise
+const fs = require('NodeJS/modules/fs').promise
 
 fs.readFile('./readme.txt')
-    .then(()=> {
+    .then(() => {
         console.log(data);
         console.log(dat.toString())
     })
-    .catch((err)=>{
+    .catch((err) => {
         throw err
     })
 
 // 쓰기 
-const fs = require('fs').promise
+const fs = require('NodeJS/modules/fs').promise
 
 fs.writeFile('./writeme.txt', '글이 입력됩니다.')
-    .then(()=> {
+    .then(() => {
         // 쓴 파일 읽기 
         return fs.readline('/writeme.txt');
     })
-    .then((data)=>{
+    .then((data) => {
         // 쓴 파일 읽은 후 출력
         console.log(data.toString());
     })
-    .catch((err)=>{
+    .catch((err) => {
         throw err
     })
 

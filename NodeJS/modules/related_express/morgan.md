@@ -14,8 +14,9 @@
 ***
 
 ### import
+
 ```javascript
-const morgan = require('morgan')
+const morgan = require('NodeJS/modules/related_express/morgan')
 ```
 
 <br> 

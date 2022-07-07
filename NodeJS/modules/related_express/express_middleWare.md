@@ -15,17 +15,17 @@
 ***
 
 
-#### 일반 서버 코드 
+#### 일반 서버 코드
+
 ```javascript
-const express = require('express')
+const express = require('NodeJS/modules/related_express/express')
 const app = express()
 
 app.set('port', 3000)
 
 
-
 // use 를 이용해서 미들웨어 등록
-app.use((req, res, next)=>{
+app.use((req, res, next) => {
     console.log('this is MiddleWare!!! ')
     // next() 를 사용하지 않으면 해당 미들웨어에서 끝이나서 
     // 다음 라우터 를 탐색하지 않는다.
@@ -36,29 +36,28 @@ app.use((req, res, next)=>{
 
 // Router
 
-app.get('/', (req, res)=>{
+app.get('/', (req, res) => {
     res.send('hello')
 })
 
-app.get('/aobut', (req, res)=>{
+app.get('/aobut', (req, res) => {
     res.send('this is about')
 })
 
-app.get('/next', (req, res)=>{
+app.get('/next', (req, res) => {
     res.send('this is next page')
 })
 
 
 // Error 핸들러로 사용된 미들웨어
 // 에러가 터지면 이리로 온다!!
-app.use((err, req, res, next)=>{
+app.use((err, req, res, next) => {
     console.log(err)
     res.status(500).send(err.message);
 })
 
 
-
-app.listen('3000', ()=>{
+app.listen('3000', () => {
     console.log('Server is Run!!')
 })
 

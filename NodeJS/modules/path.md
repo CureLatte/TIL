@@ -1,7 +1,7 @@
-## path 
+## path
 
 ```javascript
-const path = require('path');
+const path = require('NodeJS/modules/path');
 
 path.join(__dirname, 'var.js');
 
