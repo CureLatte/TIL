@@ -41,7 +41,7 @@ app.listen(3000, () => {
 ```
 
 * 기존의 http 모듈 보다 훨씬 보기 좋고 API 를 구현 하기 간편 하다
-* 위에서 아래로 router 를 확인하고 끝까지 실행이 됬음에도 매칭되는 게 없다면 
+* 위에서 아래로 router 를 확인 하고 끝까지 실행이 됬음에도 매칭 되는 게 없다면 
 * not found 가 알아서 된다. 
 
 
@@ -54,8 +54,6 @@ app.listen(3000, () => {
 
 ```javascript
 // Server.js
-
-
 const express = require('NodeJS/modules/related_express/express');
 
 // 경로 설정을 위한 path import
@@ -63,6 +61,9 @@ const path = require('NodeJS/modules/path');
 
 const app = express();
 app.set('port', 3000)
+
+// public 이라는 폴더 아래 파일둘을 static 파일들로 사용하겠다.
+app.use('/', express.static('public')); 
 
 app.get('/', (req, res) => {
     // res.sendFile 을 통해 파일을 보내준다. 
@@ -75,3 +76,20 @@ app.listen(3000, () => {
     console.log('Server is Run!!')
 });
 ```
+
+### 형식
+```javascript
+app.use('요청 및 희망 경로', exress.static('실제 경로'))
+```
+
+### Ex1. 
+```javascript
+app.use('/home', exress.static('static'))
+```
+* `static/hello.html` 이 있다고 가정 했을 떄 
+
+* 해당 파일을 렌더링 하고 싶을때 또는 GET 으로 파일을 요청 하고 싶을 때는
+* `localhost:3000/home/hello.html ` 로 요청 하게 된다. 
+
+
+#### 모든 파일을 넘겨줄 API를 갖고 있지 않아도 된다! CSS, JS, Images 모두 가능
